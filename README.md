@@ -1,3 +1,5 @@
+<p align="center"><img src="logo.png" alt="sink" width="160"></p>
+
 # sink
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/jakobii/sink.svg)](https://pkg.go.dev/github.com/jakobii/sink)
