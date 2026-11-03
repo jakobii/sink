@@ -1,4 +1,4 @@
-<p align="center"><img src="logo.png" alt="sink" width="160"></p>
+<p align="center"><img src=".github/logo.png" alt="sink" width="160"></p>
 
 # sink
 
