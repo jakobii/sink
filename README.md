@@ -49,3 +49,7 @@ case <-time.After(someDuration):
 ```
 
 See more [examples](./example_test.go).
+
+## Credits
+
+The Go gopher was designed by [Renée French](https://reneefrench.blogspot.com/) and is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
