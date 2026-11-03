@@ -4,7 +4,6 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/jakobii/sink.svg)](https://pkg.go.dev/github.com/jakobii/sink)
 [![Test](https://github.com/jakobii/sink/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jakobii/sink/actions/workflows/test.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/jakobii/sink)](https://goreportcard.com/report/github.com/jakobii/sink)
 
 Synchronization primitives for Go - "everything but the kitchen sink". A collection of context-aware, channel-based sync utilities that extend the standard library's `sync` package.
 
