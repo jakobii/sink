@@ -1,2 +1,2 @@
-// Package syncx provides channel based implementations of sync primitives.
-package syncx
+// Package sink provides channel based implementations of sync primitives.
+package sink

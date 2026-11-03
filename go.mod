@@ -1,3 +1,3 @@
-module github.com/jakobii/syncx
+module github.com/jakobii/sink
 
 go 1.25

@@ -1,13 +1,13 @@
-# syncx
+# sink
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/jakobii/syncx.svg)](https://pkg.go.dev/github.com/jakobii/syncx)
-[![Test](https://github.com/jakobii/syncx/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jakobii/syncx/actions/workflows/test.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/jakobii/syncx)](https://goreportcard.com/report/github.com/jakobii/syncx)
+[![Go Reference](https://pkg.go.dev/badge/github.com/jakobii/sink.svg)](https://pkg.go.dev/github.com/jakobii/sink)
+[![Test](https://github.com/jakobii/sink/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jakobii/sink/actions/workflows/test.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jakobii/sink)](https://goreportcard.com/report/github.com/jakobii/sink)
 
-Enhanced synchronization primitives for Go. A collection of context-aware, channel-based sync utilities that extend the standard library's `sync` package.
+Synchronization primitives for Go - "everything but the kitchen sink". A collection of context-aware, channel-based sync utilities that extend the standard library's `sync` package.
 
 ```
-go get github.com/jakobii/syncx
+go get github.com/jakobii/sink
 ```
 
 ## Features
@@ -23,9 +23,9 @@ The standard library's `sync` package is excellent for most use cases and provid
 For integration with `select` statements:
 
 ```go
-var mu syncx.Mutex
+var mu sink.Mutex
 select {
-case mu.Acquire() <- syncx.Lock:
+case mu.Acquire() <- sink.Lock:
 	defer mu.Unlock()
 	fmt.Println("acquired lock")
 case <-time.After(someDuration):
@@ -34,7 +34,7 @@ case <-time.After(someDuration):
 ```
 
 ```go
-var wg syncx.WaitGroup
+var wg sink.WaitGroup
 wg.Go(func(){
 	fmt.Printf("doing some work")
 })

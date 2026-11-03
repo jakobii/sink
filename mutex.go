@@ -1,4 +1,4 @@
-package syncx
+package sink
 
 import (
 	"context"
@@ -8,7 +8,7 @@ import (
 // Lock is a small helper to make calling struct{}{} a bit less noisy and a
 // tiny bit more readable.
 //
-//	mu.Acquire() <- syncx.Lock
+//	mu.Acquire() <- sink.Lock
 //
 // same as:
 //
@@ -39,7 +39,7 @@ func (m *Mutex) Unlock() {
 // Acquire locks m when sending to its returned channel. Do not close it.
 //
 //	select {
-//	case mu.Acquire() <- syncx.Lock:
+//	case mu.Acquire() <- sink.Lock:
 //	case <-time.After(someDuration):
 //	}
 func (m *Mutex) Acquire() chan<- struct{} {

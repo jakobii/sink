@@ -1,16 +1,16 @@
-package syncx_test
+package sink_test
 
 import (
 	"context"
 	"fmt"
 	"time"
 
-	"github.com/jakobii/syncx"
+	"github.com/jakobii/sink"
 )
 
 // Demonstrates a few ways that Mutex can be used.
 func ExampleMutex() {
-	var mu syncx.Mutex
+	var mu sink.Mutex
 
 	// Lock
 	mu.Lock()
@@ -25,7 +25,7 @@ func ExampleMutex() {
 
 	// Acquire
 	select {
-	case mu.Acquire() <- syncx.Lock:
+	case mu.Acquire() <- sink.Lock:
 		fmt.Println("This mutex plays nice with select statements.")
 		mu.Unlock()
 	default:
@@ -47,7 +47,7 @@ func ExampleMutex() {
 }
 
 func ExampleMutex_LockContext() {
-	var mu syncx.Mutex
+	var mu sink.Mutex
 
 	// Imagine some other process has the lock.
 	mu.Lock()
@@ -68,7 +68,7 @@ func ExampleMutex_LockContext() {
 }
 
 func ExampleMutex_Acquire() {
-	var mu syncx.Mutex
+	var mu sink.Mutex
 
 	// The process that sends on the mutex channel is the one that obtains the
 	// lock.
@@ -88,7 +88,7 @@ func ExampleMutex_Acquire() {
 
 func ExampleWaitGroup() {
 	// Works like sync.WaitGroup.
-	var wg syncx.WaitGroup
+	var wg sink.WaitGroup
 	for range 3 {
 		wg.Go(func() {
 			fmt.Println("Worker completed")
@@ -102,7 +102,7 @@ func ExampleWaitGroup() {
 }
 
 func ExampleWaitGroup_Await() {
-	var wg syncx.WaitGroup
+	var wg sink.WaitGroup
 
 	// Start a worker
 	wg.Go(func() {
@@ -124,7 +124,7 @@ func ExampleWaitGroup_Await() {
 }
 
 func ExampleWaitGroup_WaitContext() {
-	var wg syncx.WaitGroup
+	var wg sink.WaitGroup
 
 	// Start a long-running task
 	wg.Go(func() {
